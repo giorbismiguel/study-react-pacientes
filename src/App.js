@@ -4,7 +4,18 @@ import Header from "./components/Header";
 import NuevaCita from "./components/NuevaCita";
 
 class App extends Component {
-  state = {};
+  state = {
+    citas: []
+  };
+
+  crearNuevaCita = (cita) => {
+    const citas = [...this.state.citas, cita];
+
+
+    this.setState({
+
+    });
+  };
 
   render() {
     return (
@@ -12,7 +23,7 @@ class App extends Component {
         <Header title="Administrador Pacientes Veterinarias" />
         <div className="row">
           <div className="col-md-10 mx-auto">
-            <NuevaCita />
+            <NuevaCita crearNuevaCita={this.crearNuevaCita}/>
           </div>
         </div>
       </div>
